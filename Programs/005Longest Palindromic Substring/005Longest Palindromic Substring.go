@@ -108,6 +108,14 @@ func longestPalindrome(s string) string {
 
 // 解法三：动态规划
 // 时间复杂度和空间复杂度均为O(n^2)
+/*如果我们已经知道“bab” 是回文，那么很明显，“ababa” 一定是回文，因为它的左首字母和右尾字母是相同的。
+用二维数组记录每一维的数字分别记录回文串起点和终点位置
+dp[j][i]   true 如果子串是回文串
+dp[j][i]   false 子串不是回文串
+即
+dp[j][i] = (s[i] == s[j] && dp[j+1][i-1])
+依据此递推式，我们先计算一字母的回文，再计算两字母。。。
+*/
 func longestPalindrome(s string) string {
 	sLen := len(s)
 	var dp [1000][1000]bool
