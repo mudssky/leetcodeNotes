@@ -5,6 +5,8 @@ use golang solve problems in leetcode
 
 ## 001 Two Sum
 
+==Eazy==
+
 Given an array of integers, return **indices** of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have **exactly** one solution, and you may not use the *same* element twice.
@@ -26,6 +28,8 @@ return [0, 1].
 
 ## 002Add Two Numbers
 
+==Medium==
+
 You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order** and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -45,6 +49,8 @@ Explanation: 342 + 465 = 807.
 假定两个数开头都不包含0，除了他们自己是0的时候
 
 ## 003Longest Substring Without Repeating Characters
+
+==Medium==
 
 Given a string, find the length of the **longest substring** without repeating characters.
 
@@ -80,6 +86,10 @@ Explanation: The answer is "wke", with the length of 3.
 
 
 ## 004Median of Two Sorted Arrays
+
+==Hard==
+
+
 
 ==待续==
 
@@ -123,6 +133,10 @@ The median is (2 + 3)/2 = 2.5
 
 ## 005Longest Palindromic Substring
 
+==Medium==
+
+
+
 Given a string **s**, find the longest palindromic substring in **s**. You may assume that the maximum length of **s** is 1000.
 
 **Example 1:**
@@ -155,6 +169,8 @@ Output: "bb"
 
 
 ## 006.ZigZag Conversion
+
+==Medium==
 
 The string `"PAYPALISHIRING"` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
@@ -204,6 +220,8 @@ P     I
 
 ## 007Reverse Integer
 
+==Eazy==
+
 Given a 32-bit signed integer, reverse digits of an integer.
 
 **Example 1:**
@@ -244,7 +262,7 @@ Accepted
 
 ## 008String to Integer (atoi)
 
-
+==Medium==
 
 Implement `atoi` which converts a string to an integer.
 
@@ -327,6 +345,8 @@ Explanation: The number "-91283472332" is out of the range of a 32-bit signed in
 
 ## 009.Palindrome Number
 
+==Eazy==
+
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
 **Example 1:**
@@ -369,6 +389,8 @@ Coud you solve it without converting the integer to a string?
 
 
 ## 010.Regular Expression Matching
+
+==Hard==
 
 Given an input string (`s`) and a pattern (`p`), implement regular expression matching with support for `'.'` and `'*'`.
 
@@ -453,6 +475,8 @@ p 可能为空，且只包含从 a-z 的小写字母，以及字符 . 和 *。
 
 ## 011.Container With Most Water
 
+==Medium==
+
 Given *n* non-negative integers *a1*, *a2*, ..., *an* , where each represents a point at coordinate (*i*, *ai*). *n* vertical lines are drawn such that the two endpoints of line *i* is at (*i*, *ai*) and (*i*, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
 
 **Note:** You may not slant the container and *n* is at least 2.
@@ -487,6 +511,8 @@ Output: 49
 
 
 ## 012.Integer to Roman
+
+==Medium==
 
 Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
 
@@ -616,6 +642,8 @@ M             1000
 
 ## 013.Roman to Integer
 
+==Eazy==
+
 Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
 
 ```
@@ -744,6 +772,8 @@ M             1000
 
 ## 014.Longest Common Prefix
 
+==Eazy==
+
 Write a function to find the longest common prefix string amongst an array of strings.
 
 If there is no common prefix, return an empty string `""`.
@@ -798,6 +828,8 @@ All given inputs are in lowercase letters `a-z`.
 
 ## 015.3Sum
 
+==Medium==
+
 Given an array `nums` of *n* integers, are there elements *a*, *b*, *c* in `nums` such that *a* + *b* + *c* = 0? Find all unique triplets in the array which gives the sum of zero.
 
 **Note:**
@@ -838,6 +870,8 @@ A solution set is:
 
 ## 016. 3Sum Closest
 
+==Medium==
+
 Given an array `nums` of *n* integers and an integer `target`, find three integers in `nums` such that the sum is closest to `target`. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
 **Example:**
@@ -859,6 +893,8 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
 
 ## 017.Letter Combinations of a Phone Number
+
+==Medium==
 
 Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent.
 
@@ -894,6 +930,196 @@ Although the above answer is in lexicographical order, your answer could be in a
 
 **说明:**
 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
+
+
+
+## 018. 4Sum
+
+==Medium==
+
+Given an array `nums` of *n* integers and an integer `target`, are there elements *a*, *b*, *c*, and *d* in `nums` such that *a* + *b* + *c* + *d* = `target`? Find all unique quadruplets in the array which gives the sum of `target`.
+
+**Note:**
+
+The solution set must not contain duplicate quadruplets.
+
+**Example:**
+
+```
+Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+
+A solution set is:
+[
+  [-1,  0, 0, 1],
+  [-2, -1, 1, 2],
+  [-2,  0, 0, 2]
+]
+```
+
+
+
+给定一个包含 *n* 个整数的数组 `nums` 和一个目标值 `target`，判断 `nums` 中是否存在四个元素 *a，**b，c* 和 *d* ，使得 *a* + *b* + *c* + *d* 的值与 `target` 相等？找出所有满足条件且不重复的四元组。
+
+**注意：**
+
+答案中不可以包含重复的四元组。
+
+**示例：**
+
+```
+给定数组 nums = [1, 0, -1, 0, -2, 2]，和 target = 0。
+
+满足要求的四元组集合为：
+[
+  [-1,  0, 0, 1],
+  [-2, -1, 1, 2],
+  [-2,  0, 0, 2]
+]
+```
+
+
+
+## 019.Remove Nth Node From End of List
+
+==Medium==
+
+Given a linked list, remove the *n*-th node from the end of list and return its head.
+
+**Example:**
+
+```
+Given linked list: 1->2->3->4->5, and n = 2.
+
+After removing the second node from the end, the linked list becomes 1->2->3->5.
+```
+
+**Note:**
+
+Given *n* will always be valid.
+
+**Follow up:**
+
+Could you do this in one pass?
+
+
+
+给定一个链表，删除链表的倒数第 *n* 个节点，并且返回链表的头结点。
+
+**示例：**
+
+```
+给定一个链表: 1->2->3->4->5, 和 n = 2.
+
+当删除了倒数第二个节点后，链表变为 1->2->3->5.
+```
+
+**说明：**
+
+给定的 *n* 保证是有效的。
+
+**进阶：**
+
+你能尝试使用一趟扫描实现吗？
+
+## 020.Valid Parentheses
+
+==Eazy==
+
+Given a string containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
+
+An input string is valid if:
+
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+
+Note that an empty string is also considered valid.
+
+**Example 1:**
+
+```
+Input: "()"
+Output: true
+```
+
+**Example 2:**
+
+```
+Input: "()[]{}"
+Output: true
+```
+
+**Example 3:**
+
+```
+Input: "(]"
+Output: false
+```
+
+**Example 4:**
+
+```
+Input: "([)]"
+Output: false
+```
+
+**Example 5:**
+
+```
+Input: "{[]}"
+Output: true
+```
+
+
+
+
+
+给定一个只包括 `'('`，`')'`，`'{'`，`'}'`，`'['`，`']'` 的字符串，判断字符串是否有效。
+
+有效字符串需满足：
+
+1. 左括号必须用相同类型的右括号闭合。
+2. 左括号必须以正确的顺序闭合。
+
+注意空字符串可被认为是有效字符串。
+
+**示例 1:**
+
+```
+输入: "()"
+输出: true
+```
+
+**示例 2:**
+
+```
+输入: "()[]{}"
+输出: true
+```
+
+**示例 3:**
+
+```
+输入: "(]"
+输出: false
+```
+
+**示例 4:**
+
+```
+输入: "([)]"
+输出: false
+```
+
+**示例 5:**
+
+```
+输入: "{[]}"
+输出: true
+```
+
+
+
+
 
 
 

@@ -154,12 +154,18 @@ func threeSum(nums []int) [][]int {
 	res := make([][]int, 0)
 	sort.Ints(nums)
 	for i := 0; i < len(nums) && nums[i] <= 0; i++ {
-		if i-1 >= 0 && nums[i] == nums[i-1] {
+		// i指针指向的数字如果已经出现过一次，之后的都是重复的情况
+		// 3数和i移动时候最多容忍两个数重复，因为如果两个数重复第三个数就确定了
+		// 因为指针移动的缘故，判断到两个数重复的时候，之前 i=? l=?的情况已经计算过了。
+		// 为了达到去重的效果所以把重复的部分都跳过，最多重复两个（第三个不判断，但是也可能重复），且过滤到只出现一次这种情况
+		// 因为两个数确定，第三个数也就跟着确定，所以第三个数不用判断，两个重复就是等于3个形成的序列重复了，
+		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
 		l, r := i+1, len(nums)-1
 		for l < r {
 			if nums[l]+nums[r] == (-nums[i]) {
+
 				if r == len(nums)-1 || nums[r+1] != nums[r] {
 					res = append(res, []int{nums[i], nums[l], nums[r]})
 				}
