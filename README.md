@@ -1145,6 +1145,80 @@ Output: 1->1->2->3->4->4
 
 
 
+## 022.Generate Parentheses
+
+Given *n* pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+For example, given *n* = 3, a solution set is:
+
+```
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+```
+
+给出 *n* 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且**有效的**括号组合。
+
+例如，给出 *n* = 3，生成结果为：
+
+```
+[
+  "((()))",
+  "(()())",
+  "(())()",
+  "()(())",
+  "()()()"
+]
+```
+
+
+
+
+
+## 023.Merge k Sorted Lists
+
+Merge *k* sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+
+**Example:**
+
+```
+Input:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+Output: 1->1->2->3->4->4->5->6
+```
+
+
+
+
+
+合并 *k* 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
+
+**示例:**
+
+```
+输入:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+输出: 1->1->2->3->4->4->5->6
+```
+
+
+
+
+
+
+
 
 
 
