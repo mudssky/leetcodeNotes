@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
@@ -203,7 +205,11 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	return root.Next
 }*/
 // 解法三 优化解法一，通过分治法，把合并k个划分为合并 k/2 不断划分，直到两两合并。相比解法一，大大减少了合并的次数
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+/*
+Runtime: 16 ms, faster than 64.37% of Go online submissions for Merge k Sorted Lists.
+Memory Usage: 6.2 MB, less than 13.04% of Go online submissions for Merge k Sorted Lists.
+*/
+/*func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 设置一个起始点值为0（其实值无所谓），然后遍历的时候，慢慢在后面把节点拼接上去
 	zeroNode := &ListNode{0, nil}
 	// 临时指针，用于帮助构造新链表
@@ -256,7 +262,109 @@ func mergeKLists(lists []*ListNode) *ListNode {
 		listsLen = k
 	}
 	return lists[0]
+}*/
+// 解法四 使用最小堆
+// 参考别人的代码如下
+/*
+Runtime: 8 ms, faster than 100.00% of Go online submissions for Merge k Sorted Lists.
+Memory Usage: 5.4 MB, less than 65.22% of Go online submissions for Merge k Sorted Lists.
+*/
+
+type NodeHeap []*ListNode
+
+func (h NodeHeap) Len() int           { return len(h) }
+func (h NodeHeap) Less(i, j int) bool { return h[i].Val <= h[j].Val }
+func (h NodeHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *NodeHeap) Push(x *ListNode) {
+	*h = append(*h, x)
+	h.up(h.Len() - 1)
 }
+
+func (h *NodeHeap) Pop() *ListNode {
+	e := h.Len() - 1
+	h.Swap(0, e)
+	h.down(0, e)
+
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+func (h *NodeHeap) up(j int) {
+	for {
+		i := (j - 1) / 2 // parent
+		if i == j || !h.Less(j, i) {
+			break
+		}
+		h.Swap(i, j)
+		j = i
+	}
+}
+
+func (h *NodeHeap) down(i0, n int) bool {
+	i := i0
+	for {
+		j1 := 2*i + 1
+		if j1 >= n || j1 < 0 { // j1 < 0 after int overflow
+			break
+		}
+		j := j1 // left child
+		if j2 := j1 + 1; j2 < n && h.Less(j2, j1) {
+			j = j2 // = 2*i + 2  // right child
+		}
+		if !h.Less(j, i) {
+			break
+		}
+		h.Swap(i, j)
+		i = j
+	}
+	return i > i0
+}
+
+func mergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	if len(lists) == 1 {
+		return lists[0]
+	}
+
+	heap := make(NodeHeap, 0, len(lists))
+
+	for i := 0; i < len(lists); i++ {
+		if lists[i] != nil {
+			heap.Push(lists[i])
+		}
+	}
+
+	var head *ListNode
+	var tail *ListNode
+	var next *ListNode
+
+	for heap.Len() > 0 {
+		if tail != nil {
+			next = heap.Pop()
+			if next.Next != nil {
+				heap.Push(next.Next)
+			}
+			tail.Next = next
+			tail = next
+		} else {
+			head = heap.Pop()
+			tail = head
+			if head.Next != nil {
+				heap.Push(head.Next)
+			}
+		}
+	}
+
+	return head
+}
+
+// 做了这题感觉很多数据结构基础掌握的不太行，需要恶补一下
 
 func main() {
 	list1 := &ListNode{1, nil}
