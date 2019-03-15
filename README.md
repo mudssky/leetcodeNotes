@@ -1245,6 +1245,318 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
 
 
+## 025 Reverse Nodes in k-Group
+
+==Hard==
+
+Given a linked list, reverse the nodes of a linked list *k* at a time and return its modified list.
+
+*k* is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of *k* then left-out nodes in the end should remain as it is.
+
+
+
+**Example:**
+
+Given this linked list: `1->2->3->4->5`
+
+For *k* = 2, you should return: `2->1->4->3->5`
+
+For *k* = 3, you should return: `3->2->1->4->5`
+
+**Note:**
+
+- Only constant extra memory is allowed.
+- You may not alter the values in the list's nodes, only nodes itself may be changed.
+
+
+
+
+
+给出一个链表，每 *k* 个节点一组进行翻转，并返回翻转后的链表。
+
+*k* 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 *k* 的整数倍，那么将最后剩余节点保持原有顺序。
+
+**示例 :**
+
+给定这个链表：`1->2->3->4->5`
+
+当 *k* = 2 时，应当返回: `2->1->4->3->5`
+
+当 *k* = 3 时，应当返回: `3->2->1->4->5`
+
+**说明 :**
+
+- 你的算法只能使用常数的额外空间。
+- **你不能只是单纯的改变节点内部的值**，而是需要实际的进行节点交换。
+
+
+
+
+
+## 026.Remove Duplicates from Sorted Array
+
+==Eazy==
+
+Given a sorted array *nums*, remove the duplicates [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) such that each element appear only *once* and return the new length.
+
+Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory.
+
+**Example 1:**
+
+```
+Given nums = [1,1,2],
+
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+It doesn't matter what you leave beyond the returned length.
+```
+
+**Example 2:**
+
+```
+Given nums = [0,0,1,1,1,2,2,3,3,4],
+
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+
+It doesn't matter what values are set beyond the returned length.
+```
+
+**Clarification:**
+
+Confused why the returned value is an integer but your answer is an array?
+
+Note that the input array is passed in by **reference**, which means modification to the input array will be known to the caller as well.
+
+Internally you can think of this:
+
+```
+// nums is passed in by reference. (i.e., without making a copy)
+int len = removeDuplicates(nums);
+
+// any modification to nums in your function would be known by the caller.
+// using the length returned by your function, it prints the first len elements.
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+
+
+
+
+给定一个排序数组，你需要在**原地**删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+
+不要使用额外的数组空间，你必须在**原地修改输入数组**并在使用 O(1) 额外空间的条件下完成。
+
+**示例 1:**
+
+```
+给定数组 nums = [1,1,2], 
+
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
+
+你不需要考虑数组中超出新长度后面的元素。
+```
+
+**示例 2:**
+
+```
+给定 nums = [0,0,1,1,1,2,2,3,3,4],
+
+函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+
+你不需要考虑数组中超出新长度后面的元素。
+```
+
+**说明:**
+
+为什么返回数值是整数，但输出的答案是数组呢?
+
+请注意，输入数组是以**“引用”**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+
+你可以想象内部操作如下:
+
+```
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+int len = removeDuplicates(nums);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+
+
+
+
+## 027.Remove Element
+
+==Eazy==
+
+Given an array *nums* and a value *val*, remove all instances of that value [**in-place**](https://en.wikipedia.org/wiki/In-place_algorithm) and return the new length.
+
+Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory.
+
+The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+
+**Example 1:**
+
+```
+Given nums = [3,2,2,3], val = 3,
+
+Your function should return length = 2, with the first two elements of nums being 2.
+
+It doesn't matter what you leave beyond the returned length.
+```
+
+**Example 2:**
+
+```
+Given nums = [0,1,2,2,3,0,4,2], val = 2,
+
+Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
+
+Note that the order of those five elements can be arbitrary.
+
+It doesn't matter what values are set beyond the returned length.
+```
+
+**Clarification:**
+
+Confused why the returned value is an integer but your answer is an array?
+
+Note that the input array is passed in by **reference**, which means modification to the input array will be known to the caller as well.
+
+Internally you can think of this:
+
+```
+// nums is passed in by reference. (i.e., without making a copy)
+int len = removeElement(nums, val);
+
+// any modification to nums in your function would be known by the caller.
+// using the length returned by your function, it prints the first len elements.
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+
+
+
+
+给定一个数组 *nums* 和一个值 *val*，你需要**原地**移除所有数值等于 *val* 的元素，返回移除后数组的新长度。
+
+不要使用额外的数组空间，你必须在**原地修改输入数组**并在使用 O(1) 额外空间的条件下完成。
+
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+
+**示例 1:**
+
+```
+给定 nums = [3,2,2,3], val = 3,
+
+函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
+
+你不需要考虑数组中超出新长度后面的元素。
+```
+
+**示例 2:**
+
+```
+给定 nums = [0,1,2,2,3,0,4,2], val = 2,
+
+函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+
+注意这五个元素可为任意顺序。
+
+你不需要考虑数组中超出新长度后面的元素。
+```
+
+**说明:**
+
+为什么返回数值是整数，但输出的答案是数组呢?
+
+请注意，输入数组是以**“引用”**方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+
+你可以想象内部操作如下:
+
+```
+// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
+int len = removeElement(nums, val);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+
+
+
+
+## 028.Implement strStr()
+
+==Eazy==
+
+Implement [strStr()](http://www.cplusplus.com/reference/cstring/strstr/).
+
+Return the index of the first occurrence of needle in haystack, or **-1** if needle is not part of haystack.
+
+**Example 1:**
+
+```
+Input: haystack = "hello", needle = "ll"
+Output: 2
+```
+
+**Example 2:**
+
+```
+Input: haystack = "aaaaa", needle = "bba"
+Output: -1
+```
+
+**Clarification:**
+
+What should we return when `needle` is an empty string? This is a great question to ask during an interview.
+
+For the purpose of this problem, we will return 0 when `needle` is an empty string. This is consistent to C's [strstr()](http://www.cplusplus.com/reference/cstring/strstr/) and Java's [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)).
+
+
+
+
+
+实现 [strStr()](https://baike.baidu.com/item/strstr/811469) 函数。
+
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  **-1**。
+
+**示例 1:**
+
+```
+输入: haystack = "hello", needle = "ll"
+输出: 2
+```
+
+**示例 2:**
+
+```
+输入: haystack = "aaaaa", needle = "bba"
+输出: -1
+```
+
+**说明:**
+
+当 `needle` 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+
+对于本题而言，当 `needle` 是空字符串时我们应当返回 0 。这与C语言的 [strstr()](https://baike.baidu.com/item/strstr/811469) 以及 Java的 [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)) 定义相符。
+
+
+
+
+
 
 
 ## 038.Count and Say
