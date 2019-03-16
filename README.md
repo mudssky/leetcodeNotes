@@ -1495,6 +1495,66 @@ for (int i = 0; i < len; i++) {
 
 
 
+## 029.Divide Two Integers
+
+==Medium==
+
+Given two integers `dividend` and `divisor`, divide two integers without using multiplication, division and mod operator.
+
+Return the quotient after dividing `dividend` by `divisor`.
+
+The integer division should truncate toward zero.
+
+**Example 1:**
+
+```
+Input: dividend = 10, divisor = 3
+Output: 3
+```
+
+**Example 2:**
+
+```
+Input: dividend = 7, divisor = -3
+Output: -2
+```
+
+**Note:**
+
+- Both dividend and divisor will be 32-bit signed integers.
+- The divisor will never be 0.
+- Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 231 − 1 when the division result overflows.
+
+
+
+给定两个整数，被除数 `dividend` 和除数 `divisor`。将两数相除，要求不使用乘法、除法和 mod 运算符。
+
+返回被除数 `dividend` 除以除数 `divisor` 得到的商。
+
+**示例 1:**
+
+```
+输入: dividend = 10, divisor = 3
+输出: 3
+```
+
+**示例 2:**
+
+```
+输入: dividend = 7, divisor = -3
+输出: -2
+```
+
+**说明:**
+
+- 被除数和除数均为 32 位有符号整数。
+- 除数不为 0。
+- 假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。本题中，如果除法结果溢出，则返回 231 − 1。
+
+
+
+
+
 
 
 ## 028.Implement strStr()
@@ -1552,6 +1612,159 @@ For the purpose of this problem, we will return 0 when `needle` is an empty stri
 当 `needle` 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
 
 对于本题而言，当 `needle` 是空字符串时我们应当返回 0 。这与C语言的 [strstr()](https://baike.baidu.com/item/strstr/811469) 以及 Java的 [indexOf()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)) 定义相符。
+
+
+
+## 030.Substring with Concatenation of All Words
+
+==Hard==
+
+You are given a string, **s**, and a list of words, **words**, that are all of the same length. Find all starting indices of substring(s) in **s** that is a concatenation of each word in **words** exactly once and without any intervening characters.
+
+**Example 1:**
+
+```
+Input:
+  s = "barfoothefoobarman",
+  words = ["foo","bar"]
+Output: [0,9]
+Explanation: Substrings starting at index 0 and 9 are "barfoor" and "foobar" respectively.
+The output order does not matter, returning [9,0] is fine too.
+```
+
+**Example 2:**
+
+```
+Input:
+  s = "wordgoodgoodgoodbestword",
+  words = ["word","good","best","word"]
+Output: []
+```
+
+
+
+给定一个字符串 **s** 和一些长度相同的单词 **words。**找出 **s** 中恰好可以由 **words** 中所有单词串联形成的子串的起始位置。
+
+注意子串要与 **words** 中的单词完全匹配，中间不能有其他字符，但不需要考虑 **words** 中单词串联的顺序。
+
+ 
+
+**示例 1：**
+
+```
+输入：
+  s = "barfoothefoobarman",
+  words = ["foo","bar"]
+输出：[0,9]
+解释：
+从索引 0 和 9 开始的子串分别是 "barfoor" 和 "foobar" 。
+输出的顺序不重要, [9,0] 也是有效答案。
+```
+
+**示例 2：**
+
+```
+输入：
+  s = "wordgoodgoodgoodbestword",
+  words = ["word","good","best","word"]
+输出：[]
+```
+
+
+
+## 031.Next Permutation
+
+
+
+Implement **next permutation**, which rearranges numbers into the lexicographically next greater permutation of numbers.
+
+If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+
+The replacement must be **in-place** and use only constant extra memory.
+
+Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
+
+```
+1,2,3` → `1,3,2`
+`3,2,1` → `1,2,3`
+`1,1,5` → `1,5,1
+```
+
+
+
+实现获取下一个排列的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
+
+如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+
+必须**原地**修改，只允许使用额外常数空间。
+
+以下是一些例子，输入位于左侧列，其相应输出位于右侧列。
+`1,2,3` → `1,3,2`
+`3,2,1` → `1,2,3`
+`1,1,5` → `1,5,1`
+
+
+
+解法
+
+## 概要
+
+我们需要找到给定数字列表的下一个字典排列，而不是由给定数组形成的数字。
+
+## 解决方案
+
+------
+
+#### 方法一：暴力法
+
+**算法**
+
+在这种方法中，我们找出由给定数组的元素形成的列表的每个可能的排列，并找出比给定的排列更大的排列。 但是这个方法是一种非常天真的方法，因为它要求我们找出所有可能的排列 这需要很长时间，实施起来也很复杂。 因此，这种方法根本无法通过。 所以，我们直接采用正确的方法。
+
+**复杂度分析**
+
+- 时间复杂度：O(n!)*O*(*n*!)，可能的排列总计有 n!*n*! 个。
+
+- 空间复杂度：O(n)*O*(*n*)，因为数组将用于存储排列。 
+
+  
+
+------
+
+#### 方法二：一遍扫描
+
+**算法**
+
+首先，我们观察到对于任何给定序列的降序，没有可能的下一个更大的排列。
+
+例如，以下数组不可能有下一个排列：
+
+```
+[9, 5, 4, 3, 1]
+```
+
+我们需要从右边找到第一对两个连续的数字 a[i]*a*[*i*] 和 a[i-1]*a*[*i*−1]，它们满足 a[i]>a[i-1]*a*[*i*]>*a*[*i*−1]。现在，没有对 a[i-1]*a*[*i*−1] 右侧的重新排列可以创建更大的排列，因为该子数组由数字按降序组成。因此，我们需要重新排列 a[i-1]*a*[*i*−1] 右边的数字，包括它自己。
+
+现在，什么样的重新排列将产生下一个更大的数字？我们想要创建比当前更大的排列。因此，我们需要将数字 a[i-1]*a*[*i*−1] 替换为位于其右侧区域的数字中比它更大的数字，例如 a[j]*a*[*j*]。
+
+![ Next Permutation ](assets/31_nums_graph.png)
+
+我们交换数字 a[i-1]*a*[*i*−1] 和 a[j]*a*[*j*]。我们现在在索引 i-1*i*−1 处有正确的数字。 但目前的排列仍然不是我们正在寻找的排列。我们需要通过仅使用 a[i-1]*a*[*i*−1]右边的数字来形成最小的排列。 因此，我们需要放置那些按升序排列的数字，以获得最小的排列。
+
+但是，请记住，在从右侧扫描数字时，我们只是继续递减索引直到我们找到 a[i]*a*[*i*] 和 a[i-1]*a*[*i*−1] 这对数。其中，a[i] > a[i-1]*a*[*i*]>*a*[*i*−1]。因此，a[i-1]*a*[*i*−1] 右边的所有数字都已按降序排序。此外，交换 a[i-1]*a*[*i*−1] 和 a[j]*a*[*j*] 并未改变该顺序。因此，我们只需要反转 a[i-1]*a*[*i*−1] 之后的数字，以获得下一个最小的字典排列。
+
+下面的动画将有助于你理解：
+
+![Next Permutation](assets/31_Next_Permutation.gif)
+
+
+
+**复杂度分析**
+
+- 时间复杂度：O(n)*O*(*n*)，在最坏的情况下，只需要对整个数组进行两次扫描。
+- 空间复杂度：O(1)*O*(1)，没有使用额外的空间，原地替换足以做到。
+
+
 
 
 
