@@ -1766,6 +1766,417 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 
 
+## 032.Longest Valid Parentheses
+
+==Hard==
+
+Given a string containing just the characters `'('` and `')'`, find the length of the longest valid (well-formed) parentheses substring.
+
+**Example 1:**
+
+```
+Input: "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()"
+```
+
+**Example 2:**
+
+```
+Input: ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()"
+```
+
+
+
+
+
+给定一个只包含 `'('` 和 `')'` 的字符串，找出最长的包含有效括号的子串的长度。
+
+**示例 1:**
+
+```
+输入: "(()"
+输出: 2
+解释: 最长有效括号子串为 "()"
+```
+
+**示例 2:**
+
+```
+输入: ")()())"
+输出: 4
+解释: 最长有效括号子串为 "()()"
+```
+
+
+
+
+
+## 033.Search in Rotated Sorted Array
+
+==Medium==
+
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., `[0,1,2,4,5,6,7]` might become `[4,5,6,7,0,1,2]`).
+
+You are given a target value to search. If found in the array return its index, otherwise return `-1`.
+
+You may assume no duplicate exists in the array.
+
+Your algorithm's runtime complexity must be in the order of *O*(log *n*).
+
+**Example 1:**
+
+```
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+```
+
+**Example 2:**
+
+```
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+```
+
+
+
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+
+( 例如，数组 `[0,1,2,4,5,6,7]` 可能变为 `[4,5,6,7,0,1,2]` )。
+
+搜索一个给定的目标值，如果数组中存在这个目标值，则返回它的索引，否则返回 `-1` 。
+
+你可以假设数组中不存在重复的元素。
+
+你的算法时间复杂度必须是 *O*(log *n*) 级别。
+
+**示例 1:**
+
+```
+输入: nums = [4,5,6,7,0,1,2], target = 0
+输出: 4
+```
+
+**示例 2:**
+
+```
+输入: nums = [4,5,6,7,0,1,2], target = 3
+输出: -1
+```
+
+
+
+## 034.Find First and Last Position of Element in Sorted Array
+
+==Medium==
+
+
+
+Given an array of integers `nums` sorted in ascending order, find the starting and ending position of a given `target` value.
+
+Your algorithm's runtime complexity must be in the order of *O*(log *n*).
+
+If the target is not found in the array, return `[-1, -1]`.
+
+**Example 1:**
+
+```
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+```
+
+**Example 2:**
+
+```
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+```
+
+
+
+给定一个按照升序排列的整数数组 `nums`，和一个目标值 `target`。找出给定目标值在数组中的开始位置和结束位置。
+
+你的算法时间复杂度必须是 *O*(log *n*) 级别。
+
+如果数组中不存在目标值，返回 `[-1, -1]`。
+
+**示例 1:**
+
+```
+输入: nums = [5,7,7,8,8,10], target = 8
+输出: [3,4]
+```
+
+**示例 2:**
+
+```
+输入: nums = [5,7,7,8,8,10], target = 6
+输出: [-1,-1]
+```
+
+
+
+## 035.Search Insert Position
+
+==Eazy==
+
+ 
+
+Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You may assume no duplicates in the array.
+
+**Example 1:**
+
+```
+Input: [1,3,5,6], 5
+Output: 2
+```
+
+**Example 2:**
+
+```
+Input: [1,3,5,6], 2
+Output: 1
+```
+
+**Example 3:**
+
+```
+Input: [1,3,5,6], 7
+Output: 4
+```
+
+**Example 4:**
+
+```
+Input: [1,3,5,6], 0
+Output: 0
+```
+
+
+
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+
+你可以假设数组中无重复元素。
+
+**示例 1:**
+
+```
+输入: [1,3,5,6], 5
+输出: 2
+```
+
+**示例 2:**
+
+```
+输入: [1,3,5,6], 2
+输出: 1
+```
+
+**示例 3:**
+
+```
+输入: [1,3,5,6], 7
+输出: 4
+```
+
+**示例 4:**
+
+```
+输入: [1,3,5,6], 0
+输出: 0
+```
+
+
+
+
+
+## 036.Valid Sudoku
+
+==Medium==
+
+Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated **according to the following rules**:
+
+1. Each row must contain the digits `1-9` without repetition.
+2. Each column must contain the digits `1-9` without repetition.
+3. Each of the 9 `3x3` sub-boxes of the grid must contain the digits `1-9` without repetition.
+
+![img](assets/250px-Sudoku-by-L2G-20050714.svg.png)
+A partially filled sudoku which is valid.
+
+The Sudoku board could be partially filled, where empty cells are filled with the character `'.'`.
+
+**Example 1:**
+
+```
+Input:
+[
+  ["5","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+Output: true
+```
+
+**Example 2:**
+
+```
+Input:
+[
+  ["8","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+Output: false
+Explanation: Same as Example 1, except with the 5 in the top left corner being 
+    modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+```
+
+**Note:**
+
+- A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+- Only the filled cells need to be validated according to the mentioned rules.
+- The given board contain only digits `1-9` and the character `'.'`.
+- The given board size is always `9x9`.
+
+
+
+
+
+判断一个 9x9 的数独是否有效。只需要**根据以下规则**，验证已经填入的数字是否有效即可。
+
+1. 数字 `1-9` 在每一行只能出现一次。
+2. 数字 `1-9` 在每一列只能出现一次。
+3. 数字 `1-9` 在每一个以粗实线分隔的 `3x3` 宫内只能出现一次。
+
+![img](assets/250px-Sudoku-by-L2G-20050714.svg-1552969466414.png)
+
+上图是一个部分填充的有效的数独。
+
+数独部分空格内已填入了数字，空白格用 `'.'` 表示。
+
+**示例 1:**
+
+```
+输入:
+[
+  ["5","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+输出: true
+```
+
+**示例 2:**
+
+```
+输入:
+[
+  ["8","3",".",".","7",".",".",".","."],
+  ["6",".",".","1","9","5",".",".","."],
+  [".","9","8",".",".",".",".","6","."],
+  ["8",".",".",".","6",".",".",".","3"],
+  ["4",".",".","8",".","3",".",".","1"],
+  ["7",".",".",".","2",".",".",".","6"],
+  [".","6",".",".",".",".","2","8","."],
+  [".",".",".","4","1","9",".",".","5"],
+  [".",".",".",".","8",".",".","7","9"]
+]
+输出: false
+解释: 除了第一行的第一个数字从 5 改为 8 以外，空格内其他数字均与 示例1 相同。
+     但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。
+```
+
+**说明:**
+
+- 一个有效的数独（部分已被填充）不一定是可解的。
+- 只需要根据以上规则，验证已经填入的数字是否有效即可。
+- 给定数独序列只包含数字 `1-9` 和字符 `'.'` 。
+- 给定数独永远是 `9x9` 形式的。
+
+
+
+
+
+## 037.Sudoku Solver
+
+==Hard==
+
+Write a program to solve a Sudoku puzzle by filling the empty cells.
+
+A sudoku solution must satisfy **all of the following rules**:
+
+1. Each of the digits `1-9` must occur exactly once in each row.
+2. Each of the digits `1-9` must occur exactly once in each column.
+3. Each of the the digits `1-9` must occur exactly once in each of the 9 `3x3` sub-boxes of the grid.
+
+Empty cells are indicated by the character `'.'`.
+
+![img](assets/250px-Sudoku-by-L2G-20050714.svg-1552979442420.png)
+A sudoku puzzle...
+
+![img](assets/250px-Sudoku-by-L2G-20050714_solution.svg.png)
+...and its solution numbers marked in red.
+
+**Note:**
+
+- The given board contain only digits `1-9` and the character `'.'`.
+- You may assume that the given Sudoku puzzle will have a single unique solution.
+- The given board size is always `9x9`.
+
+
+
+
+
+编写一个程序，通过已填充的空格来解决数独问题。
+
+一个数独的解法需**遵循如下规则**：
+
+1. 数字 `1-9` 在每一行只能出现一次。
+2. 数字 `1-9` 在每一列只能出现一次。
+3. 数字 `1-9` 在每一个以粗实线分隔的 `3x3` 宫内只能出现一次。
+
+空白格用 `'.'` 表示。
+
+![img](assets/250px-Sudoku-by-L2G-20050714.svg-1552979457429.png)
+
+一个数独。
+
+![img](assets/250px-Sudoku-by-L2G-20050714_solution.svg-1552979457444.png)
+
+答案被标成红色。
+
+**Note:**
+
+- 给定的数独序列只包含数字 `1-9` 和字符 `'.'` 。
+- 你可以假设给定的数独只有唯一解。
+- 给定数独永远是 `9x9` 形式的。
+
+
+
 
 
 
@@ -1845,3 +2256,8 @@ Output: "1211"
 输入: 4
 输出: "1211"
 ```
+
+
+
+
+
